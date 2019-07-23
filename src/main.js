@@ -5,12 +5,11 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import global_ from '@/components/global.vue'
 import store from '@/store/index.js';
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
-Vue.prototype.GLOBAL = global_;
+// Vue.prototype.GLOBAL = global_;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

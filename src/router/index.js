@@ -6,6 +6,7 @@ import Achieve from "@/components/Achieve"
 import Members from "@/components/Members"
 import BackEnd from "@/components/BackEnd"
 import MainPages from "@/components/MainPages"
+import ManagementSystem from "@/components/ManagementSystem"
 
 Vue.use(Router)
 
@@ -43,6 +44,11 @@ export default new Router({
       path: '/backEnd',
       name: "backEnd",
       component: BackEnd
+    },
+    {
+      path: "/managementsystem",
+      name: "managementSystem",
+      component: ManagementSystem
     }
   ]
 })

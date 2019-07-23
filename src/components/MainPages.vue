@@ -20,6 +20,7 @@
 
 <script>
 import Header from "@/components/Header"
+import global_ from '@/components/Global.vue'
 import Footer from "@/components/Footer"
 export default {
   name: "MainPages",
@@ -30,16 +31,16 @@ export default {
   methods: {
     changeTab(e) {
       switch(parseInt(e)){
-        case this.GLOBAL.path_name.news:
+        case global_.path_name.news:
           this.$router.push({ name: "news"});
           break;
-        case this.GLOBAL.path_name["achieve"]: 
+        case global_.path_name["achieve"]: 
           this.$router.push({ name:"achieve"});
           break;
-        case this.GLOBAL.path_name["members"]:
+        case global_.path_name["members"]:
           this.$router.push({ name:"members"});
           break;
-        case this.GLOBAL.path_name["backEnd"]:
+        case global_.path_name["backEnd"]:
           this.$router.push({ name:"backEnd"});
           break;
         default:

@@ -6,7 +6,13 @@ const path_name = {
   achieve: 4,
   backEnd: 5
 }
+const loginState = {
+  "success": 11,
+  "fail": 12,
+  "deprecate": 13
+}
 export default {
-  path_name
+  path_name,
+  loginState
 }
 </script>

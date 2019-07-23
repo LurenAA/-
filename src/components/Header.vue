@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import global_ from '@/components/Global.vue'
 export default {
   name: "Host",
   methods: {
@@ -35,16 +36,16 @@ export default {
       let name = this.$router.currentRoute.name;
       switch(name) {
         case "host":
-          this.activeIndex = this.GLOBAL.path_name["host"] + ''
+          this.activeIndex = global_.path_name["host"] + ''
           break;
         case "news":
-          this.activeIndex = this.GLOBAL.path_name["news"] + ''
+          this.activeIndex = global_.path_name["news"] + ''
           break;
         case "members":
-          this.activeIndex = this.GLOBAL.path_name["members"] + ''
+          this.activeIndex = global_.path_name["members"] + ''
           break;
         case "achieve":
-          this.activeIndex = this.GLOBAL.path_name["achieve"] + ''
+          this.activeIndex = global_.path_name["achieve"] + ''
           break;
       }
     })
