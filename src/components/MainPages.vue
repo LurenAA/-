@@ -92,7 +92,7 @@ export default {
 .el_app_container{
   margin: 0 auto;
   padding: 0;
-  width: 970px;
+  width: 80vw;
 }
 .el_app_el_header {
   height: auto !important;

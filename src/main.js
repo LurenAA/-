@@ -11,6 +11,12 @@ Vue.config.productionTip = false
 Vue.use(ElementUI);
 // Vue.prototype.GLOBAL = global_;
 /* eslint-disable no-new */
+router.afterEach((to, from) => {
+  if(new Date().getTime() - store.getters.getTokenExpire >= 1000000 &&
+  store.getters.getTokenExpire != "") {
+    store.dispatch("clearToken")
+  }
+})
 new Vue({
   el: '#app',
   router,

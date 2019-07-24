@@ -1,7 +1,8 @@
 /*
   passInf = {
         account
-        pass
+        pass,
+        token
       }
 */
 import url_const from "./config"
@@ -11,6 +12,10 @@ function postPasswd(passInf, sucHandle, errorHandle) {
   return axios.post(url_const.checkPassword, {
     passwd: md5(passInf.pass),
     account: passInf.account
+  },{
+    headers: {
+      "token": passInf.token
+    }
   })
   .then(response  => {
     if(sucHandle)

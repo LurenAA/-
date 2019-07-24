@@ -8,7 +8,7 @@
     <el-menu :default-active="activeIndex" 
     class="header_tabs" mode="horizontal" 
     @select="handleSelect" active-text-color = "#42B9B0">
-      <el-menu-item index="1">标签1</el-menu-item>
+      <el-menu-item index="1">主页</el-menu-item>
       <el-menu-item index="2">标签2</el-menu-item>
       <el-menu-item index="3">标签3</el-menu-item>
       <el-menu-item index="4">标签4</el-menu-item>

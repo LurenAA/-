@@ -7,6 +7,7 @@ import Members from "@/components/Members"
 import BackEnd from "@/components/BackEnd"
 import MainPages from "@/components/MainPages"
 import ManagementSystem from "@/components/ManagementSystem"
+import UploadArticle from '@/components/UploadArticle';
 
 Vue.use(Router)
 
@@ -48,7 +49,12 @@ export default new Router({
     {
       path: "/managementsystem",
       name: "managementSystem",
-      component: ManagementSystem
+      component: ManagementSystem,
+      children: [{
+        path: "UploadArticle",
+        name: "UploadArticle",
+        component: UploadArticle
+      }]
     }
   ]
 })
