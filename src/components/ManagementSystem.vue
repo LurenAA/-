@@ -151,12 +151,12 @@ export default {
   right: 0;
 }
 .contentDeatail {
-  overflow: hidden;
+  overflow: auto;
 }
 #asideBack{
   background: #ffffff;
   width:250px;
   border-right: solid 1px #e6e6e6;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 </style>
