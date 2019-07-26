@@ -7,7 +7,9 @@ import Members from "@/components/Members"
 import BackEnd from "@/components/BackEnd"
 import MainPages from "@/components/MainPages"
 import ManagementSystem from "@/components/ManagementSystem"
-import UploadArticle from '@/components/UploadArticle';
+import UploadArticle from '@/components/UploadArticle'
+import HostPageAdministration from "@/components/HostPageAdministration"
+import LookArticles from "@/components/LookArticles.vue"
 
 Vue.use(Router)
 
@@ -54,6 +56,14 @@ export default new Router({
         path: "UploadArticle",
         name: "UploadArticle",
         component: UploadArticle
+      },{
+        path:"HostPageAdministration",
+        name: "HostPageAdministration",
+        component:HostPageAdministration
+      },{
+        path:"LookArticles",
+        name: "LookArticles",
+        component:LookArticles
       }]
     }
   ]

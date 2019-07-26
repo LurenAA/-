@@ -15,6 +15,8 @@ router.afterEach((to, from) => {
   if(new Date().getTime() - store.getters.getTokenExpire >= 1000000 &&
   store.getters.getTokenExpire != "") {
     store.dispatch("clearToken")
+  } else {
+    store.commit("changeTokenExpire", new Date().getTime())
   }
 })
 new Vue({

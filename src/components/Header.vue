@@ -9,10 +9,10 @@
     class="header_tabs" mode="horizontal" 
     @select="handleSelect" active-text-color = "#42B9B0">
       <el-menu-item index="1">主页</el-menu-item>
-      <el-menu-item index="2">标签2</el-menu-item>
-      <el-menu-item index="3">标签3</el-menu-item>
-      <el-menu-item index="4">标签4</el-menu-item>
-      <el-menu-item index="5">标签5</el-menu-item>
+      <el-menu-item index="2">博客</el-menu-item>
+      <el-menu-item index="3">成员</el-menu-item>
+      <el-menu-item index="4">大事件</el-menu-item>
+      <el-menu-item index="5">后台管理</el-menu-item>
     </el-menu>
   </div>
 </template>

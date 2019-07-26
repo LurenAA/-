@@ -39,9 +39,9 @@
             <i class="el-icon-menu"></i>
             <span slot="title">文章上传</span>
           </el-menu-item>
-          <el-menu-item index="3" disabled>
+          <el-menu-item index="3">
             <i class="el-icon-document"></i>
-            <span slot="title">导航三</span>
+            <span slot="title">文章详情</span>
           </el-menu-item>
           <el-menu-item index="4">
             <i class="el-icon-setting"></i>
@@ -109,7 +109,13 @@ export default {
     menuRouter(i) {
       switch(i) {
         case "2":
-          this.$router.push({ name:"UploadArticle"});
+          this.$router.push({ name:"UploadArticle"})
+          break;
+        case "1-1":
+          this.$router.push({ name:"HostPageAdministration"})
+          break;
+        case "3":
+          this.$router.push({ name:"LookArticles"})
           break;
       } 
     }
@@ -152,6 +158,7 @@ export default {
 }
 .contentDeatail {
   overflow: auto;
+  position: relative;
 }
 #asideBack{
   background: #ffffff;

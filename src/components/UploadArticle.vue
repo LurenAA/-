@@ -76,13 +76,21 @@ export default {
       FormDatas.append('simpleDes',this.form.simpleDes)
       axios.post(url.upload, FormDatas, {
         headers:{
-          "content-Type": 'multipart/form-data'
+          "content-Type": 'multipart/form-data;charset=UTF-8'
         }
       }).then(res => {
-        console.log(res)
+        this.$notify({
+          title: '成功',
+          message: '上传成功',
+          type: 'success'
+        });
       }).catch(err => {
-        console.log(err)
+        this.$notify.error({
+          title: '错误',
+          message: '上传失败'
+        });
       })
+      this.form = {}
     }
   }
 };
