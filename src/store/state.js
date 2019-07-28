@@ -1,5 +1,5 @@
 function initUserInfo() {
-  let s = localStorage.getItem('userinf')
+  let s = localStorage.getItem('userInfo')
   if(s) {
     return JSON.parse(s)
   }

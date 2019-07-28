@@ -87,7 +87,12 @@ export default {
     },  
     loginHandle(pas) {
       pas.token = this.getToken
-      postPasswd.call(this, pas, this.handleLoginSuccess)
+      postPasswd.call(this, pas, this.handleLoginSuccess, () => {
+        this.$notify.error({
+            title: "错误",
+            message: "服务器错误"
+          });
+      })
     }
   },
   components: {

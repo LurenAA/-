@@ -10,6 +10,10 @@ import ManagementSystem from "@/components/ManagementSystem"
 import UploadArticle from '@/components/UploadArticle'
 import HostPageAdministration from "@/components/HostPageAdministration"
 import LookArticles from "@/components/LookArticles.vue"
+import MemberAdministration from '@/components/MemberAdministration'
+import BokePageAdminnistr from '@/components/BokePageAdminnistr';
+import FundamentalInfo from '@/components/FundamentalInfo';
+import EventPageAdministar from '@/components/EventPageAdministar';
 
 Vue.use(Router)
 
@@ -64,7 +68,25 @@ export default new Router({
         path:"LookArticles",
         name: "LookArticles",
         component:LookArticles
-      }]
+      },{
+        path: "MemberAdministration",
+        name: "MemberAdministration",
+        component: MemberAdministration
+      }
+      ,{
+        path: "FundamentalInfo",
+        name: "FundamentalInfo",
+        component: FundamentalInfo
+      },{
+        path: "BokePageAdminnistr",
+        name: "BokePageAdminnistr",
+        component: BokePageAdminnistr
+      }, {
+        path: "EventPageAdministar",
+        name: "EventPageAdministar",
+        component: EventPageAdministar
+      }
+    ]
     }
   ]
 })

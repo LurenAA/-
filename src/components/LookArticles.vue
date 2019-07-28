@@ -84,7 +84,7 @@ export default {
         .then(res => {
           setTimeout(() => {
             this.loading = false;
-          }, 200);
+          }, 1000);
           this.data = res.data;
           // console.log(res)
         })
