@@ -3,7 +3,7 @@
     <div class = "img_wrapper">
       <img src = "../assets/pic/logo.gif" alt = "logo">
     </div>
-    <h1 id = "header_title">我是一个名字</h1>
+    <h1 id = "header_title">班级博客</h1>
     <div id = "place_holder"></div>
     <el-menu :default-active="activeIndex" 
     class="header_tabs" mode="horizontal" 

@@ -10,6 +10,9 @@ let mutations = {
   setUserInfo(state, payLoad) {
     localStorage.setItem('userInfo', JSON.stringify(payLoad));
     state.userInfo = payLoad
+  },
+  changeArticleDetail(state, payLoad) {
+    state.articleDetail = payLoad    
   }
 }
 

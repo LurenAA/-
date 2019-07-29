@@ -14,7 +14,9 @@ import MemberAdministration from '@/components/MemberAdministration'
 import BokePageAdminnistr from '@/components/BokePageAdminnistr';
 import FundamentalInfo from '@/components/FundamentalInfo';
 import EventPageAdministar from '@/components/EventPageAdministar';
-
+import Teachers from '@/components/Teachers';
+import Direction from '@/components/Direction';
+import Detail from '@/components/Detail';
 Vue.use(Router)
 
 export default new Router({
@@ -44,7 +46,21 @@ export default new Router({
           path: 'members',
           name: "members",
           component: Members
+        }, {
+          path: 'teachers',
+          name: 'teachers',
+          component: Teachers
+        }, {
+          path: 'direction',
+          name: 'direction',
+          component: Direction
+        }, {
+          path: 'detail',
+          name: 'detail',
+          component: Detail
         }
+
+
       ]
     },
     {

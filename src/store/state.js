@@ -9,7 +9,8 @@ function initUserInfo() {
 let state = {
   token: localStorage.getItem('token') || "",
   tokenExpire: localStorage.getItem('expire') || new Date().getTime(),
-  userInfo: initUserInfo()
+  userInfo: initUserInfo(),
+  articleDetail: {}
 }
 
 export default state;

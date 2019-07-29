@@ -8,8 +8,9 @@
         <a href="javascript:;">文章选择</a>
       </el-breadcrumb-item>
     </el-breadcrumb>
-      <el-transfer v-model="value" :data="data" class = "ada"></el-transfer>
-      <el-button type="primary" class = "button">保存</el-button>
+    <el-transfer v-model="value" :data="data" class="ada"
+    ></el-transfer>
+    <el-button type="primary" class="button" @click = "save">保存</el-button>
   </div>
 </template>
 
@@ -17,25 +18,77 @@
 import url from "@/api/config.js";
 import axios from "axios";
 export default {
-  name: "bokePageAdministration",
-   data() {
-      const generateData = _ => {
-        const data = [];
-        for (let i = 1; i <= 15; i++) {
-          data.push({
-            key: i,
-            label: `备选项 ${ i }`,
-            disabled: i % 4 === 0
+  name: "BokePageAdministration",
+  mounted() {
+    this.$nextTick(() => {
+       axios
+        .get(url.getArticlesTitles)
+        .then(res => {
+          // console.log(res)
+          this.articleTitles = res.data;
+        })
+        .catch(err => {
+          this.$notify.error({
+            title: "错误",
+            message: "读取文章失败"
           });
-        }
-        return data;
-      };
-      return {
-        data: generateData(),
-        value: [1, 4]
-      };
+        });
+      axios.get(url.getNamesByCols + "?col=" + 2)
+        .then(res => {
+          // console.log(res)
+          this.value = res.data
+        })
+        .catch(err => {
+          this.$notify.error({
+            title: "错误",
+            message: "读取文章失败"
+          });
+        })
+    })
+  },
+  data() {
+    return {
+      data: [],
+      value: [],
+      articleTitles: []
+    };
+  },
+  watch: {
+    articleTitles(val) {
+      // console.log(val)
+      val.forEach((element, i) => {
+        this.data.push({
+          key: element,
+          label: element
+        });
+      });
     }
-}
+  },
+  methods:{
+    save() {
+      axios.post(url.setHostPageArticles, {
+        value:this.value,
+        index: 2
+      })
+       .then(res => {
+          // console.log(res)
+          if(res.data == true) {
+            this.$notify({
+              title: '成功',
+              message: '保存成功',
+              type: 'success'
+            });
+          }
+        })
+        .catch(err => {
+         this.$notify.error({
+          title: '错误',
+          message: '保存失败'
+        });
+        })
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -55,16 +108,16 @@ export default {
   border-bottom: 1px solid #eaeefb;
   padding: 24px;
 }
-.artiContainer >>> .el-checkbox__input{
+.artiContainer >>> .el-checkbox__input {
   left: 0 !important;
-}
-.ada{
-  padding-top: 70px;
-}
-.button{
-  margin-top: 40px;
 }
 .artiContainer >>> .el-checkbox{
   margin-right: 35px;
+}
+.ada {
+  padding-top: 70px;
+}
+.button {
+  margin-top: 40px;
 }
 </style>

@@ -32,6 +32,17 @@ export default {
             message: "读取文章失败"
           });
         });
+      axios.get(url.getNamesByCols + "?col=" + 1)
+        .then(res => {
+          // console.log(res)
+          this.value = res.data
+        })
+        .catch(err => {
+          this.$notify.error({
+            title: "错误",
+            message: "读取文章失败"
+          });
+        })
     })
   },
   data() {
@@ -55,14 +66,26 @@ export default {
   methods:{
     save() {
       axios.post(url.setHostPageArticles, {
-        value:this.value
+        value:this.value,
+        index: 1
       })
         .then(res => {
-          console.log(res)
+          // console.log(res)
+          if(res.data == true) {
+            this.$notify({
+              title: '成功',
+              message: '保存成功',
+              type: 'success'
+            });
+          }
         })
         .catch(err => {
-          console.log(err)
+         this.$notify.error({
+          title: '错误',
+          message: '保存失败'
+        });
         })
+        
     }
   }
 };
