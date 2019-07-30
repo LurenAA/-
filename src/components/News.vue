@@ -39,7 +39,7 @@ import {mapMutations} from "vuex"
 export default {
   name: "News",
   mounted() {
-    axios.get(url.getContentByCols + "?col=-1") 
+    axios.get(url.getContentByCols + "?col=2") 
     .then(res => {
       console.log(res)
       this.news = res.data

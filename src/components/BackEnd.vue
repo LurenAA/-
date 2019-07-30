@@ -63,6 +63,8 @@ export default {
           username: ""
         })
         this.$message('账户过期，请联系管理员');
+        this.$refs["login_han"].ruleForm.pass = ''
+        this.$refs["login_han"].$refs["ruleForm"].clearValidate()
       } else if (sta == global_.loginState["success"]) {
         this.$message({
           message: '登陆成功',
